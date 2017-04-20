@@ -1,1 +1,40 @@
-{     "devDependencies": {         "github-webhook-handler": "*",         "electron-lite": "kaizhu256/node-electron-lite#alpha",         "utility2": "kaizhu256/node-utility2#alpha"     },     "name":"npmtest-github-webhook-handler",     "homepage": "https://github.com/npmtest/node-npmtest-github-webhook-handler",     "repository": {         "type": "git",         "url": "https://github.com/npmtest/node-npmtest-github-webhook-handler.git"     },     "scripts": {         "build-ci": "utility2 shReadmeTest build_ci.sh"     },     "version": "0.0.1" }
+{
+    "author": "kai zhu <kaizhu256@gmail.com>",
+    "description": "#### basic test coverage for  [github-webhook-handler (v0.6.0)](https://github.com/rvagg/github-webhook-handler#readme)  [![npm package](https://img.shields.io/npm/v/npmtest-github-webhook-handler.svg?style=flat-square)](https://www.npmjs.org/package/npmtest-github-webhook-handler) [![travis-ci.org build-status](https://api.travis-ci.org/npmtest/node-npmtest-github-webhook-handler.svg)](https://travis-ci.org/npmtest/node-npmtest-github-webhook-handler)",
+    "devDependencies": {
+        "electron-lite": "kaizhu256/node-electron-lite#alpha",
+        "github-webhook-handler": "*",
+        "utility2": "kaizhu256/node-utility2#alpha"
+    },
+    "engines": {
+        "node": ">=4.0"
+    },
+    "homepage": "https://github.com/npmtest/node-npmtest-github-webhook-handler",
+    "keywords": [
+        "coverage",
+        "test",
+        "github-webhook-handler"
+    ],
+    "license": "MIT",
+    "main": "lib.npmtest_github_webhook_handler.js",
+    "name": "npmtest-github-webhook-handler",
+    "nameAlias": "npmtest_github_webhook_handler",
+    "nameOriginal": "npmtest-github-webhook-handler",
+    "os": [
+        "darwin",
+        "linux"
+    ],
+    "repository": {
+        "type": "git",
+        "url": "https://github.com/npmtest/node-npmtest-github-webhook-handler.git"
+    },
+    "scripts": {
+        "build-ci": "utility2 shReadmeTest build_ci.sh",
+        "env": "env",
+        "heroku-postbuild": "npm install \"kaizhu256/node-utility2#alpha\" && utility2 shDeployHeroku",
+        "postinstall": "[ ! -f npm_scripts.sh ] || ./npm_scripts.sh postinstall",
+        "start": "PORT=${PORT:-8080} utility2 start test.js",
+        "test": "(set -e; export PORT=$(utility2 shServerPortRandom); utility2 test test.js)"
+    },
+    "version": "0.0.1"
+}
